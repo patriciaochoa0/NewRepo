@@ -1,0 +1,11 @@
+lane :drive_automated_feature_bugfix do
+  puts 'we are in the feature_bugfix LANE'
+end
+
+lane :drive_automated_dev_release do
+  put 'we are in the dev_release lane'
+end
+
+lane :drive_publish_dev_release do
+  put 'we are in the publish_dev_release lane'
+end
