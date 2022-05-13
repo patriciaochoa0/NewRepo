@@ -10,3 +10,9 @@ on:
         
         
 jobs:
+  print_input:
+    runs-on: ubuntu-latest
+    steps:
+      -name: printing the input
+      run: |
+        echo "${{ inputs.print_me }}" 
