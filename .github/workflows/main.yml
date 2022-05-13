@@ -1,0 +1,79 @@
+# This is a basic workflow to help you get started with Actions
+
+name: fl-ios-app
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      to_print:
+        type: string
+        required: true
+        description: info gets sent to reusable workflow and prints
+        
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  feature-bug-fix:
+    if: github.ref == "refs/heads/bugfix" ##or whatever the branch name for bug fixes is
+    steps:
+    ##You reference resusable workflow files using one of the following syntaxes:
+## - {owner}/{repo}/.github/workflows/{filename}@{ref} for reusable workflows in public or internal repos
+## ./.github/workflows/{filename} for reusable workflows in the same repo. 
+## {ref} can be a SHA, a release tage, or a branch name. 
+      uses: RISPixsa/floodlight-ios-app/.github/workflows/REUSABLE_WORKFLOW_FILE.yml 
+      
+      
+      with: 
+      lane: "drive_automated_feature_bugfix"
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+#   dev_release:
+#     if: github.ref == "refs/heads/dev_release" ##or whatever the branch name for bug fixes is
+#     steps:
+#       uses: RISPixsa/floodlight-ios-app/.github/workflows/REUSABLE_WORKFLOW_FILE.yml 
+#       with: 
+#       lane: "drive_automated_feature_bugfix"      
+
+#   publish_dev_release:
+#     if: github.ref == "refs/heads/publish_dev_release" ##or whatever the branch name for bug fixes is
+#     steps:
+#       uses: RISPixsa/floodlight-ios-app/.github/workflows/REUSABLE_WORKFLOW_FILE.yml 
+#       with: 
+#       lane: "drive_automated_feature_bugfix" 
+
+
+      
+      
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
