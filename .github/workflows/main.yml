@@ -12,27 +12,29 @@ on:
                  description: print out the lane name.  
 
 jobs: 
-    the-job:
-        if: github.reg == "refs/heads/bugfix" ##or whatever the branch name for bug fix is. 
+    name-job:
+        runs-on: ubuntu-latest
         steps:
-            - name: bugfix?
+            - name: bugFix
+              if: github.ref == 'refs/heads/bugfix' ##or whatever the branch name for bug fix is. 
               uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
               with: 
-                lane: drive_automated_feature_bugfix 
+                lane: ${{github.event.inputs.print_lane}} #drive_automated_feature_bugfix 
+                run: echo ${{github.event.inputs.print_lane}}
                 # ${{github.event.inputs.print_lane}}
 
     # feature-dev-release:
-        if: github.reg == "refs/heads/dev-release" ##or whatever the branch name is. 
-        steps:
-            - uses:  ./.github/workflows/reusable_workflow.yml
+            - name: devv-release
+              if: github.ref == 'refs/heads/dev-release' ##or whatever the branch name is. 
+              uses:  ./.github/workflows/reusable_workflow.yml
               with: 
                 lane: drive_automated_dev_release
                 # ${{github.event.inputs.print_lane}}
  
     # publish_dev_release:
-        if: github.reg == "refs/heads/pub-dev-release" ##or whatever the branch name is. 
-        steps:
-            - uses:  ./.github/workflows/reusable_workflow.yml
+            - name: publishh
+              if: github.ref == 'refs/heads/pub-dev-release' ##or whatever the branch name is. 
+              uses:  ./.github/workflows/reusable_workflow.yml
               with: 
                 lane: drive_publish_dev_release
                 # ${{github.event.inputs.print_lane}}
