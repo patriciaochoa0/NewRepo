@@ -15,8 +15,8 @@ jobs:
     name-job:
         runs-on: ubuntu-latest
         steps:
-            - name: bugfix
-              if: github.ref == "refs/heads/bugfix" ##or whatever the branch name for bug fix is. 
+            - name: bugFix
+              if: github.ref == 'refs/heads/bugfix' ##or whatever the branch name for bug fix is. 
               uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
               with: 
                 lane: drive_automated_feature_bugfix 
