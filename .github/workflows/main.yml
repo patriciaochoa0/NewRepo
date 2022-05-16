@@ -20,7 +20,7 @@ jobs:
               uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
               with: 
                 lane: ${{github.event.inputs.print_lane}} #drive_automated_feature_bugfix 
-                echo ${{github.event.inputs.print_lane}}
+                run: echo ${{github.event.inputs.print_lane}}
                 # ${{github.event.inputs.print_lane}}
 
     # feature-dev-release:
