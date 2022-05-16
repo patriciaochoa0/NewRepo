@@ -17,7 +17,7 @@ on:
 jobs: 
     name-job:
       name: bugFix
-      if: github.ref == 'refs/heads/main' ##or whatever the branch name for bug fix is. 
+      if: startsWith(github.ref, 'refs/heads/testing') #github.ref == 'refs/heads/main' ##or whatever the branch name for bug fix is. 
       uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
       with: 
           print_me: drive_automated_feature_bugfix 
