@@ -6,7 +6,7 @@ name: fl-ios-app
 on:
   push:
     branches:
-      - "testing*"
+      - "testing"
       #- 'bugfix*'
     # workflow_dispatch:
     #     inputs:
