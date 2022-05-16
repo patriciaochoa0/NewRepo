@@ -9,7 +9,7 @@ on:
             print_lane: 
                  type: string 
                  required: true
-                 description: print out the lane name.  
+                 description: print out the lane NAME.   
 
 jobs: 
     name-job:
