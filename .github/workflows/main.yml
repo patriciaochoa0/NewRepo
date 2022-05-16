@@ -3,13 +3,16 @@
 name: fl-ios-app
 
 # Controls when the workflow will run
-on: 
-    workflow_dispatch:
-        inputs:
-            print_lane: 
-                 type: string 
-                 required: true
-                 description: print out the lane NAME.   
+on:
+  push:
+    branches:
+      - "*"
+    # workflow_dispatch:
+    #     inputs:
+    #         print_lane: 
+    #              type: string 
+    #              required: true
+    #              description: print out the lane NAME.   
 
 jobs: 
     name-job:
