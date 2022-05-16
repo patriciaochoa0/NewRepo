@@ -3,7 +3,7 @@ name: reusable FILE
 on: 
   workflow_call:
     inputs:
-      print_me:
+      lane:
         type: string 
         required: true
         description: String prints out from reusable_workflow.
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: printing the input
         run: |
-          echo "${{ inputs.print_me }}" 
+          echo "${{ inputs.lane }}" 

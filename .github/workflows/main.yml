@@ -6,7 +6,8 @@ name: fl-ios-app
 on:
   push:
     branches:
-      - "*"
+      - "testing*"
+      #- 'bugfix*'
     # workflow_dispatch:
     #     inputs:
     #         print_lane: 
@@ -15,12 +16,12 @@ on:
     #              description: print out the lane NAME.   
 
 jobs: 
-    name-job:
+    name-job: 
       name: bugFix
       if: startsWith(github.ref, 'refs/heads/testing') #github.ref == 'refs/heads/main' ##or whatever the branch name for bug fix is. 
       uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
       with: 
-          print_me: drive_automated_feature_bugfix 
+          lane: drive_automated_feature_bugfix 
           #run: echo ${{github.event.inputs.print_lane}}
                 # ${{github.event.inputs.print_lane}}
 
