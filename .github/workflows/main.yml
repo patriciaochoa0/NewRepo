@@ -41,6 +41,7 @@ jobs:
 
     Dev_branch:
       name: Dev release and publish
+      runs-on: macos-latest
       steps:
         - name: dev
           if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
