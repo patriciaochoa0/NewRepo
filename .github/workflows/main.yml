@@ -10,6 +10,7 @@ on:
       - 'bugfix*'
       - 'testing/FLMP*' ##have to add the slashed in order for /FLMP to work. can't be testing*
       - 'main'  ##main gets skipped because it is not referenced in line 17. 
+      - 'testing/*/*'
 
 jobs: 
     BugFixes: 
