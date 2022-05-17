@@ -8,7 +8,7 @@ on:
     branches:
       - "feature**" ##these names should make sense with RMS branch naming. Ask Cassidy if FLMP and FLAP should be distiguished
       - 'bugfix**'  
-      - 'dev*' # with 'dev*'?
+      - 'dev' # with 'dev*'?
       - 'release**'
 
 
