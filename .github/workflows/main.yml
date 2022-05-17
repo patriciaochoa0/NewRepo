@@ -15,7 +15,7 @@ on:
 jobs: 
     BugFixes: 
       name: bugFix
-      if: startsWith(github.ref, 'refs/heads/testing') ##or whatever the branch name for bug fix is. 
+      if: startsWith(github.ref, 'refs/heads/bugfix') ##or whatever the branch name for bug fix is. 
       uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
       with: 
           lane: drive_automated_feature_bugfix ###have to fix up lane names. better lane names that describes whats going on. 
