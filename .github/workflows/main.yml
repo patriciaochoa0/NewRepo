@@ -6,8 +6,8 @@ name: fl-ios-app
 on:
   push:
     branches:
-      - "testing*"
-      #- 'bugfix*'
+      - "testing*" ##these names should make sense with RMS branch naming. 
+      - 'bugfix*'
       #- 'testing/FLMP'  
 
 jobs: 
