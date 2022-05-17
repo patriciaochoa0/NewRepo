@@ -41,7 +41,7 @@ jobs:
 
     Publish_Dev:
       name: publish_dev
-      if: startsWith(github.ref, 'refs/heads/dev')' ##or whatever the branch name is. 
+      if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
       uses:  ./.github/workflows/reusable_workflow.yml
       with:
         lane: publish_dev_release
