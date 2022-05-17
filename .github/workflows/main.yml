@@ -9,7 +9,7 @@ on:
       - "testing*" ##these names should make sense with RMS branch naming. 
       - 'bugfix*'
       - 'testing/FLMP*' ##have to add the slashed in order for /FLMP to work. can't be testing*
-      - 'main'  
+      - 'main'  ##main gets skipped because it is not referenced in line 17. 
 
 jobs: 
     BugFixes: 
@@ -17,7 +17,7 @@ jobs:
       if: startsWith(github.ref, 'refs/heads/testing') ##or whatever the branch name for bug fix is. 
       uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
       with: 
-          lane: drive_automated_feature_bugfix 
+          lane: drive_automated_feature_bugfix ###have to fix up lane names. better lane names that describes whats going on. 
   
     # feature-dev:
     #   - name: devv-release
