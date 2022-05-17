@@ -16,16 +16,14 @@ on:
     #              description: print out the lane NAME.   
 
 jobs: 
-    name-job: 
+    BugFixes: 
       name: bugFix
-      if: startsWith(github.ref, 'refs/heads/testing') #github.ref == 'refs/heads/main' ##or whatever the branch name for bug fix is. 
+      if: startsWith(github.ref, 'refs/heads/testing') ##or whatever the branch name for bug fix is. 
       uses:  ./.github/workflows/reusable_workflow.yml #@using Steph's version. but maybe change to @foghorn-dev.orV# 
       with: 
           lane: drive_automated_feature_bugfix 
-          #run: echo ${{github.event.inputs.print_lane}}
-                # ${{github.event.inputs.print_lane}}
-
-    # feature-dev-release:
+  
+    # feature-dev:
     #   - name: devv-release
     #           if: github.ref == 'refs/heads/dev-release' ##or whatever the branch name is. 
     #           uses:  ./.github/workflows/reusable_workflow.yml
