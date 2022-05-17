@@ -8,7 +8,8 @@ on:
     branches:
       - "testing*" ##these names should make sense with RMS branch naming. 
       - 'bugfix*'
-      #- 'testing/FLMP'  
+      #- 'testing/FLMP'
+      - 'main'  
 
 jobs: 
     BugFixes: 
