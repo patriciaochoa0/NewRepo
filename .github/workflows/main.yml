@@ -7,13 +7,7 @@ on:
   push:
     branches:
       - "testing*"
-      #- 'bugfix*'
-    # workflow_dispatch:
-    #     inputs:
-    #         print_lane: 
-    #              type: string 
-    #              required: true
-    #              description: print out the lane NAME.   
+      #- 'bugfix*'  
 
 jobs: 
     BugFixes: 
