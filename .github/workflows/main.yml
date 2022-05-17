@@ -27,24 +27,38 @@ jobs:
       with:
           lane: feature_bugfix
  
-    Dev_branch:
-      name: dev
-      if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
-      uses:  ./.github/workflows/reusable_workflow.yml
-      with:
-        lane: dev_release 
-        # - name: publish_dev_release
-        #   if: github.ref == 'refs/heads/dev' ##or whatever the branch name is. 
-        #   uses:  ./.github/workflows/reusable_workflow.yml
-        #   with:
-        #     lane: publish_dev_release
+    # Dev_branch:
+    #   name: dev
+    #   if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
+    #   uses:  ./.github/workflows/reusable_workflow.yml
+    #   with:
+    #     lane: dev_release 
+    #     # - name: publish_dev_release
+    #     #   if: github.ref == 'refs/heads/dev' ##or whatever the branch name is. 
+    #     #   uses:  ./.github/workflows/reusable_workflow.yml
+    #     #   with:
+    #     #     lane: publish_dev_release
 
-    Publish_Dev:
-      name: publish_dev
-      if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
-      uses:  ./.github/workflows/reusable_workflow.yml
-      with:
-        lane: publish_dev_release
+    Dev_branch:
+      name: Dev release and publish
+      steps:
+        - name: dev
+          if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
+          uses:  ./.github/workflows/reusable_workflow.yml
+          with:
+            lane: dev_release 
+        - name: publish_dev_release
+          if: github.ref == 'refs/heads/dev' ##or whatever the branch name is. 
+          uses:  ./.github/workflows/reusable_workflow.yml
+          with:
+            lane: publish_dev_release
+
+    # Publish_Dev:
+    #   name: publish_dev
+    #   if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
+    #   uses:  ./.github/workflows/reusable_workflow.yml
+    #   with:
+    #     lane: publish_dev_release
     
     Release_branch:
       name: release
