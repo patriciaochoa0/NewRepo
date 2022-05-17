@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - "testing**" ##these names should make sense with RMS branch naming. Ask Cassidy if FLMP and FLAP should be distiguished
-      - 'bugfix*' 
+      - 'bugfix*'  
       #- 'testing*' ##have to add the slashed in order for /FLMP to work. can't be testing*
       - 'main'  ##main gets skipped because it is not referenced in line 17. 
       #- 'testing/**' 
@@ -24,7 +24,7 @@ jobs:
     #   - name: devv-release
     #           if: github.ref == 'refs/heads/dev-release' ##or whatever the branch name is. 
     #           uses:  ./.github/workflows/reusable_workflow.yml
-    #           with: 
+    #           with:  s
     #             lane: drive_automated_dev_release
     #             # ${{github.event.inputs.print_lane}}
  
