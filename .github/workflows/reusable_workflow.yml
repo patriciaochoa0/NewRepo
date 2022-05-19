@@ -3,10 +3,10 @@ name: reusable FILE
 on: 
   workflow_call:
     inputs:
-      lane:
-        type: string 
-        required: true
-        description: String prints out from reusable_workflow.(po)
+      # lane:
+      #   type: string 
+      #   required: true
+      #   description: String prints out from reusable_workflow.(po)
       env:
         required: true
         type: string  
