@@ -2,11 +2,11 @@ name: Manual Dev workflow dispatch.
 
 on: 
   workflow_dispatch:
-    # inputs: 
-    #   lanes: 
-    #     type: string
-    #     required: true
-    #     description: What is the lane name?
+    inputs: 
+      lanes: 
+        type: string
+        required: true
+        description: What is the lane name?
       env:
         type: string 
         required: true
