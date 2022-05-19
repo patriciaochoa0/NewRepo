@@ -6,8 +6,10 @@ on:
       lane:
         type: string 
         required: true
-        description: String prints out from reusable_workflow.
-        
+        description: String prints out from reusable_workflow.(po)
+      # env:
+      #   required: true
+      #   type: string  
         
 jobs:
   print_input:
