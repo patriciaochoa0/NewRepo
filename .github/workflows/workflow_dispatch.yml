@@ -1,6 +1,10 @@
 name: Manually tirggered workflow.
 
 on: 
+  push:
+    branches:
+      #- 'dev'
+      - 'release**'
   workflow_dispatch:
     inputs: 
       env:
