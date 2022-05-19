@@ -7,10 +7,10 @@ on:
         type: string
         required: true
         description: What is the lane name?
-      env:
-        type: string 
-        required: true
-        description: What is the env variable?
+      # env:
+      #   type: string 
+      #   required: true
+      #   description: What is the env variable?
 
 jobs: 
     Publish_Dev:
@@ -19,4 +19,4 @@ jobs:
       uses:  ./.github/workflows/reusable_workflow.yml
       with:
         lane: publish_dev_release
-        env: Env-DEV
+        #env: Env-DEV
