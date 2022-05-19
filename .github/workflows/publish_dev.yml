@@ -1,0 +1,22 @@
+name: Manual Dev workflow dispatch. 
+
+on: 
+  workflow_dispatch:
+    # inputs: 
+    #   lanes: 
+    #     type: string
+    #     required: true
+    #     description: What is the lane name?
+      env:
+        type: string 
+        required: true
+        description: What is the env variable?
+
+jobs: 
+    Publish_Dev:
+      name: publish_dev
+      if: startsWith(github.ref, 'refs/heads/dev') ##or whatever the branch name is. 
+      uses:  ./.github/workflows/reusable_workflow.yml
+      with:
+        lane: publish_dev_release
+        env: some env input 
