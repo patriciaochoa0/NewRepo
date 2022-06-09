@@ -20,11 +20,3 @@ jobs:
       with:
         lane: PUBLISH_DEV_release #publish_dev_release
         #env: Env-DEV
-
-    Publish_Release:
-      name: publish_release
-      if: startsWith(github.ref, 'refs/heads/release') ##or whatever the branch name is. 
-      uses:  ./.github/workflows/reusable_workflow.yml
-      with:
-        lane: publish_dev_release
-        env: ${{github.event.inputs.env}}
