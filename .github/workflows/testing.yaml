@@ -26,7 +26,7 @@
 #         #run: RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
 #         #run: echo RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
 
-name: Android workflow-dispatch 
+name: Android 
 
 on: 
   workflow_dispatch:
@@ -37,13 +37,25 @@ on:
         description: US or EU?
 
 jobs:
-  Name of Job run:
+  us:
+    if: ${{ inputs.region == 'US' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Random output
-        run: echo SOMETHING RANDOM ON LINE 16
-      - name: Bashie file
-        uses: ./bash.sh
-        with: 
-          regionFlag: ${{ github.event.inputs.regionFlag }}
-          run: echo ${{ github.event.inputs.regionFlag }}
+      # Need to add git-checkout function
+      - run: ./github/workflows/bash.sh US #$GITHUB_REF
+  eu:
+    if: ${{ inputs.region == 'EU' }}
+    runs-on: ubuntu-latest
+    steps:
+          # Need to add git-checkout function
+      - run: ./github/workflows/bash.sh EU #$GITHUB_REF
+  bad-country-input:
+    if: ${{ inputs.region != 'US' && inputs.region != 'EU'}}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'input.region invalid; choose from US or EU' && exit 1
+  # production:
+  #   if: ${{ GITHUB_REF == 'ref/heads/production' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "I'm in prod"
