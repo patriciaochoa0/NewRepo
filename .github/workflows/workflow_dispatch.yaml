@@ -9,10 +9,10 @@ on:
         description: US or EU?
 
 jobs:
-  HERE:
+  Here:
     runs-on: ubuntu-latest
     steps:
-      - name: Random output
+      - name: Random_output
         run: echo SOMETHING RANDOM ON LINE 16
       - name: Bashie file
         uses: ./bash.sh
