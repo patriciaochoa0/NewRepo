@@ -1,4 +1,4 @@
-name: Android workflow-dispatch 
+name: Android workflow-dispatch WF_D
 
 on: 
   workflow_dispatch:
@@ -9,10 +9,10 @@ on:
         description: US or EU?
 
 jobs:
-  Name of Job run:
+  Here:
     runs-on: ubuntu-latest
     steps:
-      - name: Random output
+      - name: Random_output
         run: echo SOMETHING RANDOM ON LINE 16
       - name: Bashie file
         uses: ./bash.sh
