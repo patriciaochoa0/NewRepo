@@ -3,11 +3,13 @@ name: reusable FILE
 on: 
   workflow_call:
     inputs:
-      lane:
+      regionFlag:
         type: string 
         required: true
-        description: String prints out from reusable_workflow.
-        
+        description: US or EU
+      # env:
+      #   required: true
+      #   type: string  
         
 jobs:
   print_input:
@@ -15,4 +17,4 @@ jobs:
     steps:
       - name: printing the input
         run: |
-          echo "${{ inputs.lane }}" 
+          echo "${{ inputs.env }}" 

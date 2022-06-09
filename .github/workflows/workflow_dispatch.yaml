@@ -1,0 +1,21 @@
+name: Android workflow-dispatch 
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      regionFlag: 
+        type: string
+        required: true
+        description: US or EU?
+
+jobs:
+  Name of Job run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Random output
+        run: echo SOMETHING RANDOM ON LINE 16
+      - name: Bashie file
+        uses: ./bash.sh
+        with: 
+          regionFlag: ${{ github.event.inputs.regionFlag }}
+          run: echo ${{ github.event.inputs.regionFlag }}

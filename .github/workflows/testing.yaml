@@ -1,0 +1,49 @@
+# name: Testinnnggg
+# on: 
+#   workflow_dispatch:
+#   inputs: 
+#     regionFlag: 
+#       type: string
+#       required: true 
+#       despcription: US or EU?
+
+
+
+# jobs:
+#   Floodlight Android App:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Source Code Checkout 
+#         uses: actions/checkout@v2
+      
+#       - name: Setup JDK 11 
+#         uses: actions/setup-java@v2
+#         with: 
+#           java-version: '11'
+#           #cache: gradle
+
+#       - name: Gradle Build
+#         #run: RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
+#         #run: echo RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
+
+name: Android workflow-dispatch 
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      regionFlag: 
+        type: string
+        required: true
+        description: US or EU?
+
+jobs:
+  Name of Job run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Random output
+        run: echo SOMETHING RANDOM ON LINE 16
+      - name: Bashie file
+        uses: ./bash.sh
+        with: 
+          regionFlag: ${{ github.event.inputs.regionFlag }}
+          run: echo ${{ github.event.inputs.regionFlag }}
