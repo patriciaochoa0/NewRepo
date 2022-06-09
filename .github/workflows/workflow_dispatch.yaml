@@ -9,7 +9,7 @@ on:
         description: US or EU?
 
 jobs:
-  Name_OF_JOB:
+  HERE:
     runs-on: ubuntu-latest
     steps:
       - name: Random output
