@@ -1,13 +1,11 @@
 # name: Testinnnggg
 # on: 
 #   workflow_dispatch:
-#   inputs: 
-#     regionFlag: 
-#       type: string
-#       required: true 
-#       despcription: US or EU?
-
-
+#     inputs: 
+#       regionFlag: 
+#         type: string
+#         required: true 
+#         despcription: US or EU?
 
 # jobs:
 #   Floodlight Android App:
@@ -22,9 +20,12 @@
 #           java-version: '11'
 #           #cache: gradle
 
+#       - name: Grant execute permission for gradlew
+#         run: chmod +x gradlew
+
 #       - name: Gradle Build
-#         #run: RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
-#         #run: echo RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
+        #run: RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
+        #run: echo RISPixa/floodlight-android-app/pipeline_scripts/build_prod.sh@PM/DVOPS-2578
 
 name: Android 
 
@@ -42,22 +43,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Need to add git-checkout function
-      - uses: actions/checkout@v2
-        run: patriciaochoa0/NewRepo/.github/workflows/bash.sh US #$GITHUB_REF
+      - run: echo 'fuck yeah US' #.github/workflows/bash.sh US #$GITHUB_REF
   eu:
     if: ${{ inputs.region == 'EU' }}
     runs-on: ubuntu-latest
     steps:
-          # Need to add git-checkout function
-      - uses: actions/checkout@v2
-        run: patriciaochoa0/NewRepo/.github/workflows/bash.sh EU #$GITHUB_REF
+      # Need to add git-checkout function
+      - run: echo 'fuck yeah EU' #.github/workflows/bash.sh EU #$GITHUB_REF
   bad-country-input:
-    if: ${{ inputs.region != 'US' && inputs.region != 'EU'}}
+    if: ${{ inputs.region != 'US' && inputs.region != 'EU' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo 'input.region invalid; choose from US or EU' && exit 1
   # production:
-  #   if: ${{ GITHUB_REF == 'ref/heads/production' }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - run: echo "I'm in prod"
+    # if: ${{ GITHUB_REF == 'ref/heads/production' }}
+    # runs-on: ubuntu-latest
+    # steps:
+      # - run: echo "I'm in prod"
