@@ -11,7 +11,7 @@ if [[ $regionFlag == "EU" ]]; then
     echo $regionFlag THIS IS THE regionFlag of EU
 fi
 
-if [[ $2 == "heads/ref/somebranchname"]]; then
+if [[ $2 == "heads/ref/somebranchname" ]]; then
     echo "I'm on the somebrnachname branh"
 fi
 
