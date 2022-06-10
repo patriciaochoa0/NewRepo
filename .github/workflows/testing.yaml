@@ -44,7 +44,7 @@ jobs:
     steps:
       # Need to add git-checkout function
       - uses: actions/checkout@v2
-        run: patriciaochoa0/NewRepo/.github/workflows/bash.sh US #$GITHUB_REF
+        run: /Users/patriciaochoa/Desktop/testGHA/NewRepo/.github/workflows US #$GITHUB_REF
   eu:
     if: ${{ inputs.region == 'EU' }}
     runs-on: ubuntu-latest
